@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xml:lang="en" lang="">
+<head>
+  <title>Simple Marker</title>
+  <!-- The callback parameter is required, so we use console.debug as a noop -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJAyck73PuhGow3OY0DwUFGgU2cP7Ef7g&callback=console.debug&libraries=maps,marker&v=beta">
+  
+  </script>
+  <link rel="stylesheet" href="./assets/style.css" >
+</head>
+<body>
+<button id="update-map"></button>
+
+
+<script>
+window.document.addEventListener('DOMContentLoaded', () => {
+  updateMap();
+});
+window.document.getElementById('update-map').addEventListener('click',
+  event => {
+    updateMap();
+  },
+);
+
+async function updateMap()  {
+  const url = 'http://127.0.0.1:5000/location';
+  try {
+    const response = await fetch(url,);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const json = await response.json();
+    const position = json.iss_position;
+    const longitude = position.longitude;
+    const latitude = position.latitude;
+    document.querySelector("gmp-advanced-marker").setAttribute("position",`${latitude},${longitude}`);
+    await centerMap(latitude, longitude);
+
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
+async function centerMap(latitude,longitude) {
+  document.querySelector("gmp-map").setAttribute("center",`${latitude},${longitude}`);
+}
+</script>
+
+<gmp-map  zoom="6" map-id="DEMO_MAP_ID">
+  <gmp-advanced-marker position="40.12150192260742,-100.45039367675781" title="Satellite Location" ></gmp-advanced-marker>
+</gmp-map>
+</body>
+</html>
+

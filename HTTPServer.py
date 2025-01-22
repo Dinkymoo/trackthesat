@@ -1,8 +1,13 @@
-from urllib.request import urlopen, HTTPError, URLError
-from flask import Flask, json, Response
+from urllib.request import urlopen
+from urllib.error import URLError, HTTPError
+from flask import Flask
+import json 
+
 
 
 api = Flask(__name__)
+obj  = ()
+
 @api.route('/location', methods=['GET'])
 def get_companies():
     try:
@@ -13,17 +18,16 @@ def get_companies():
         print('URL Error: ', e.reason)
     else:
         print('No Error.')
-        return myURL.read(), {'Access-Control-Allow-Origin' : '*'}
-        
+        response = myURL.read(), {'Access-Control-Allow-Origin' : '*'}
+        return response
+
 
 
 if __name__ == '__main__' :
-    api.run() 
-
-#print (obj['timestamp'])
-#print (obj['iss_position']['latitude'], obj['data']['iss_position']['latitude'])
+    api.run()
 
 
 
 
-    
+
+

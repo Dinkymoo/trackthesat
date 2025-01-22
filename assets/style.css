@@ -1,0 +1,24 @@
+gmp-map {
+    height: 100%;
+}
+gmp-advanced-marker {
+    padding: 10px;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+   background-image: url("../assets/icon/cow.png");
+    background-repeat: no-repeat;
+   
+}
+    /* Optional: Makes the sample page fill the window. */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#update-map {
+    height: 100px;
+    z-index: 100;
+    color: pink;
+}
