@@ -8,6 +8,10 @@
   },
   "license": "MIT",
   "dependencies": {
+    "express": "^4.21.2",
     "httpserver": "^0.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.18.0"
   }
 }

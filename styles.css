@@ -1,24 +1,11 @@
+* {
+  height: 100%;
+}
 
- #map {
-    height: 100%;
-  }
-  html,
-  body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  #cow {
-    text-align: center;
-    width: 500px;
-    height: 500px;
-    background-image: url("./assets/icon/crazyCow.png");
-    background-repeat: no-repeat;
-  }
-  
-  
-  
-  
-  
-  
-  
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
