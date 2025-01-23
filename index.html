@@ -1,55 +1,16 @@
 <!DOCTYPE html>
-<html xml:lang="en" lang="">
-<head>
-  <title>Simple Marker</title>
-  <!-- The callback parameter is required, so we use console.debug as a noop -->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJAyck73PuhGow3OY0DwUFGgU2cP7Ef7g&callback=console.debug&libraries=maps,marker&v=beta">
-  
-  </script>
-  <link rel="stylesheet" href="./assets/style.css" >
-</head>
-<body>
-<button id="update-map"></button>
+<html>
+  <head>
+    <title>Cow Sat nav</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script type="module" src="index.js"></script>
+  </head>
+  <body>
+    <div id="map"></div>
 
-
-<script>
-window.document.addEventListener('DOMContentLoaded', () => {
-  updateMap();
-});
-window.document.getElementById('update-map').addEventListener('click',
-  event => {
-    updateMap();
-  },
-);
-
-async function updateMap()  {
-  const url = 'http://127.0.0.1:5000/location';
-  try {
-    const response = await fetch(url,);
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
-
-    const json = await response.json();
-    const position = json.iss_position;
-    const longitude = position.longitude;
-    const latitude = position.latitude;
-    document.querySelector("gmp-advanced-marker").setAttribute("position",`${latitude},${longitude}`);
-    await centerMap(latitude, longitude);
-
-  } catch (error) {
-    console.error(error.message);
-  }
-}
-
-async function centerMap(latitude,longitude) {
-  document.querySelector("gmp-map").setAttribute("center",`${latitude},${longitude}`);
-}
-</script>
-
-<gmp-map  zoom="6" map-id="DEMO_MAP_ID">
-  <gmp-advanced-marker position="40.12150192260742,-100.45039367675781" title="Satellite Location" ></gmp-advanced-marker>
-</gmp-map>
-</body>
+    <!-- prettier-ignore -->
+    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+        ({key: "AIzaSyA5dmEuaN-O1Rloh-Za9JCBuztd5pLiv9E", v: "weekly"});</script>
+  </body>
 </html>
-
