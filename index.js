@@ -32,4 +32,5 @@ async function initMap() {
     console.error('Fetch error: ', error);
   }
 }
+
 initMap();
