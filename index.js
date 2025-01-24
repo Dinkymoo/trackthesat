@@ -12,7 +12,7 @@ async function initMap() {
 
   const map = new Map(document.getElementById('map'), {
     center: { lat: latitude, lng: longitude },
-    zoom: 4,
+    zoom: 5,
     mapId: '911e7beff6d83398',
   });
 
@@ -20,7 +20,7 @@ async function initMap() {
 
   const icon = {
     url: 'public/image/cow.png', // url
-    scaledSize: new google.maps.Size(500, 500), // scaled size
+    scaledSize: new google.maps.Size(100, 100), // scaled size
     origin: new google.maps.Point(0, 0), // origin
     anchor: new google.maps.Point(0, 0), // anchor
   };
