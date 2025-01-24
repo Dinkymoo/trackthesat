@@ -7,11 +7,8 @@
     "start": "httpserver"
   },
   "license": "MIT",
-  "dependencies": {
-    "express": "^4.21.2",
-    "httpserver": "^0.3.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "eslint": "^9.18.0"
+    "httpserver": "^0.3.0"
   }
 }
