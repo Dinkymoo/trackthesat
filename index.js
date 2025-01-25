@@ -30,7 +30,6 @@ async function initMap() {
   new Marker({
     map: map,
     position: { lat: latitude, lng: longitude },
-
     icon: icon,
   });
 }
