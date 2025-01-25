@@ -19,7 +19,7 @@ async function initMap() {
   map.setCenter({ lat: latitude, lng: longitude });
 
   const icon = {
-    url: 'https://github.com/Dinkymoo/trackthesat/blob/master/public/image/cow.png', // url
+    url: 'cow.png', // url
     scaledSize: new google.maps.Size(400, 400), // scaled size
     origin: new google.maps.Point(0, 0), // origin
     anchor: new google.maps.Point(0, 0), // anchor
