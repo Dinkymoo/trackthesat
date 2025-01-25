@@ -19,7 +19,7 @@ async function initMap() {
   map.setCenter({ lat: latitude, lng: longitude });
 
   const icon = {
-    url: 'cow.png', // url
+    url: 'https://cowsatnav.blob.core.windows.net/scm-releases/cow.png?sp=r&st=2025-01-25T11:22:34Z&se=2025-12-31T19:22:34Z&spr=https&sv=2022-11-02&sr=b&sig=RAcCLRWmHo5o5OIA6p3acm20c%2Bj%2BimUxnE8t%2FX4uWto%3D', // url
     scaledSize: new google.maps.Size(400, 400), // scaled size
     origin: new google.maps.Point(0, 0), // origin
     anchor: new google.maps.Point(0, 0), // anchor
