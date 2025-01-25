@@ -14,6 +14,8 @@ async function initMap() {
     center: { lat: latitude, lng: longitude },
     zoom: 5,
     mapId: '911e7beff6d83398',
+    minZoom: 5,
+    maxZoom: 5,
   });
 
   map.setCenter({ lat: latitude, lng: longitude });
@@ -28,6 +30,7 @@ async function initMap() {
   new Marker({
     map: map,
     position: { lat: latitude, lng: longitude },
+
     icon: icon,
   });
 }
