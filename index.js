@@ -2,27 +2,29 @@ async function initMap() {
   // Request needed libraries.
   const { Map } = await google.maps.importLibrary('maps');
   const { Marker } = await google.maps.importLibrary('marker');
+
   // Fetch the data from the Azure Function.
-  const url = 'https://cowsatnav.azurewebsites.net/api/cowSatNavFunc?code=O2rKrzg2URQil2XBB0c7arLz4x9eUySa1qbONSqK8z-8AzFuPvCEEg%3D%3D';
+  const url = 'https://cow-sat-nav-function-app.azurewebsites.net/api/cowSatNavFunc?code=AQCtEj1qe9q4wK6McdVH_v9laabr6MFSz6TtZ9xkQYTaAzFu0WQHjQ%3D%3D';
   // const url = 'http://localhost:7071/api/cowSatNavFunc';
   let response = await fetch(url);
   const data = await response.json();
+
   const latitude = Number(data['iss_position'].latitude);
   const longitude = Number(data['iss_position'].longitude);
 
   const map = new Map(document.getElementById('map'), {
     center: { lat: latitude, lng: longitude },
-    zoom: 5,
+    zoom: 3,
     mapId: '911e7beff6d83398',
-    minZoom: 5,
-    maxZoom: 5,
+    minZoom: 3,
+    maxZoom: 3,
   });
 
   map.setCenter({ lat: latitude, lng: longitude });
 
   const icon = {
-    url: 'https://cowsatnav.blob.core.windows.net/scm-releases/cow.png?sp=r&st=2025-01-25T11:22:34Z&se=2025-12-31T19:22:34Z&spr=https&sv=2022-11-02&sr=b&sig=RAcCLRWmHo5o5OIA6p3acm20c%2Bj%2BimUxnE8t%2FX4uWto%3D', // url
-    scaledSize: new google.maps.Size(400, 400), // scaled size
+    url: 'https://cowsatnavstorageacc.blob.core.windows.net/satnavcowassets/cow.png?sp=r&st=2025-01-30T15:40:21Z&se=2025-01-30T23:40:21Z&spr=https&sv=2022-11-02&sr=b&sig=i0xrvYldeHnXXErq4Qkbfyiu8BXzyI%2FbyNt8ErfvlO8%3D', // url
+    scaledSize: new google.maps.Size(200, 200), // scaled size
     origin: new google.maps.Point(0, 0), // origin
     anchor: new google.maps.Point(0, 0), // anchor
   };
