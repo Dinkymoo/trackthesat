@@ -22,7 +22,7 @@ Tech stack:
 -ImageMagic https://imagemagick.org/index.php \
 -Prettier \
 -Node \
--GitHub \
+-GitHub 
 
 ## Usage
 
