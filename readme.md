@@ -15,14 +15,14 @@ npm run start
 
 Tech stack:
 
--Maps Javascript API https://developers.google.com/maps/documentation/javascript
--JavaScript
--CSS
+-Maps Javascript API https://developers.google.com/maps/documentation/javascript \
+-JavaScript \
+-CSS \
 -HTML
--ImageMagic https://imagemagick.org/index.php
--Prettier
--Node
--GitHub
+-ImageMagic https://imagemagick.org/index.php \
+-Prettier \
+-Node \
+-GitHub \
 
 ## Usage
 
